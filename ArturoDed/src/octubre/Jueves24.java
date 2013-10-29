@@ -2,7 +2,8 @@ package octubre;
 
 public class Jueves24 {
 	//cambios de prueba
-
+	//lo que ponga aqui, será valido para toda la clase Jueves24, y si esta fuera del static, hay que indicarlo
+	public static int variable;
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 			// Operadores
@@ -58,7 +59,9 @@ public class Jueves24 {
 		
 		{
 			int z = 0; //así solo existe z dentro de estas llaves
+			a = z;
 		}
+		Jueves24.variable = 1;
 	}
 
 }
