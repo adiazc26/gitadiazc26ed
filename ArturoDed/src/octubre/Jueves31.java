@@ -43,7 +43,7 @@ public class Jueves31 {
 			System.out.println("El mayor es: " + a);
 		}else if(b >= c){
 			System.out.println("El mayor es: " + b);
-		}else if{
+		}else{
 			System.out.println("El mayor es: " + c);
 		}
 		/*for(int i =0; i < 10; ++i){
