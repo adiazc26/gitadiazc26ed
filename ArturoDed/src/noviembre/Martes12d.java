@@ -9,7 +9,7 @@ public class Martes12d {
 		int suma = 0;
 		for (;(n = Jueves31.random(0, 10)) != 0;){
 			System.out.print(n + "\t");
-			suma += 0;
+			suma += n;
 		}
 		System.out.println("\nLa suma  de la serie de números es: " + suma);
 	}
