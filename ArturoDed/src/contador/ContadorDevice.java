@@ -8,7 +8,7 @@ import java.io.*;
 public class ContadorDevice {
 	/* lo primero que ponemos es el estado de los objetos, es decir, los
 	atributos, pueden ser privados, protegidos o publicos, nosotros los
-	declaramos siempre privados para que esten encapsulados, lo nombres de
+	declaramos siempre privados para que esten encapsulados, los nombres de
 	atributos siempre empiezan en minuscula, la clase en mayúscula*/
 	private int valorActual;
 	//hay que indicar el valor de inicio
