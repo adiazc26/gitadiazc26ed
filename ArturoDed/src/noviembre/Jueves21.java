@@ -52,7 +52,16 @@ public class Jueves21 {
 		{0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}  //años bisiestos
 	
 	};
-
+	
+	//Metodo del calculo del bisiesto
+	public static int bisiesto(int aa){
+		int bi = 0;
+		if( aa % 4 == 0 && aa % 100 != 0 || aa % 400 == 0 ) {
+			bi = 1; //año bisiesto
+		}
+		return bi;
+	}
+	
 	public static void main(String[] args) {
 
 		//Declaración de variables
@@ -87,10 +96,12 @@ public class Jueves21 {
 		//System.out.println( dd + "/" + mm + "/" + aa); //si queremos comprobar la fecha leída.
 		
 		//Calcular si el año es bisiesto
-		if( aa % 4 == 0 && aa % 100 != 0 || aa % 400 == 0 ) {
+		//if( aa % 4 == 0 && aa % 100 != 0 || aa % 400 == 0 ) {
 			
-			bi = 1; //año bisiesto
-		}
+			//bi = 1; //año bisiesto
+		//}
+		
+		bi = Jueves21.bisiesto(aa);
 		
 		//System.out.println("Es bisiesto " + bi); //si queremos comprobar que funciona lo del bisiesto.
 		
@@ -99,11 +110,28 @@ public class Jueves21 {
 			
 			da += Jueves21.calendario[bi][m];
 		}
-		
+		//Sumamos los días de la fecha dada
 		da += dd;
 		System.out.println("Día del año: " + da);
+		//Sumamos un dia mas
+		++da;
+		//Calculamos el dia y mes de la fecha
+		mm=1;
+		while(mm <= 12 && da >  Jueves21.calendario[bi][mm]){
+			da -= Jueves21.calendario[bi][mm]; //Reducimos los días del mes
+			++mm; //Pasamos el mes siguiente
+		}
+		// Verificamos si estamos en el mismo año o en el siguiente
+		if (mm == 13){ //Pasar de año
+			++aa;//incrimentamos el año
+			mm=1;//inicializamos el mes a uno
+			dd=da;//los días son los que quedan
+		}else{//si no pasamos de año
+			dd=da;//los días son los que quedan
+		}
+		//Mostrar el resultado
+		System.out.println("Fecha del día siguiente: " + dd + "/" + mm + "/" + aa);
 		
-
 	}
 
 }
